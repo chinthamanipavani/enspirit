@@ -59,7 +59,7 @@ const Resume = () => {
             textAlign: "left",
           }}
         >
-          <h3>Backend Response:</h3>
+          <h3>Feedback : </h3>
           <p>
             <b>Resume Text:</b> {response.postedResume}
           </p>
