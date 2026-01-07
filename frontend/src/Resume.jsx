@@ -37,11 +37,16 @@ const Resume = () => {
 
           <form onSubmit={handleSubmit}>
             <textarea
-              rows="10"
+              rows="30"
+              columns=""
               placeholder="Paste your resume here"
               value={resumeText}
               onChange={(e) => setResumeText(e.target.value)}
-              style={{ width: "100%", marginBottom: "10px" }}
+              style={{
+                width: "1000px",
+                maxWidth: "100%",
+                marginBottom: "10px",
+              }}
               required
             />
             <button type="submit">Submit Resume</button>
