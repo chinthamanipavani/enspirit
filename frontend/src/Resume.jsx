@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Resume = () => {
   const [resumeText, setResumeText] = useState("");
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const Resume = () => {
         resume: resumeText,
       });
 
-      setResponse(res.data.message);
+      setResponse(res.data);
     } catch (error) {
       console.error("Error submitting resume", error);
     }
@@ -39,7 +39,9 @@ const Resume = () => {
       {response && (
         <div style={{ marginTop: "20px" }}>
           <h3>Backend Response:</h3>
-          <p>{response}</p>
+          <p>
+            <b>Resume Text:</b> {response.postedResume}
+          </p>
         </div>
       )}
     </div>
